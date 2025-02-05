@@ -15,7 +15,7 @@ namespace ProductTests
             product = new Product(101, "Laptop", 1000, 50);
         }
 
-        // ✅ Test 1: IncreaseStock() should correctly increease stock
+        //  Test 1: IncreaseStock() should correctly increease stock
         [Test]
         public void IncreaseStock_ValidAmount_ShouldIncreaseStock()
         {
@@ -26,7 +26,7 @@ namespace ProductTests
             Assert.That(product.StockAmount, Is.EqualTo(75));
         }
 
-        // ✅ Test 2: IncreseStocks() should not allow negativ values
+        // Test 2: IncreseStocks() should not allow negativ values
         [Test]
         public void IncreaseStock_NegativeAmount_ShouldThrowException()
         {
@@ -34,7 +34,7 @@ namespace ProductTests
             Assert.Throws<ArgumentException>(() => product.IncreaseStock(-10));
         }
 
-        // ✅ Test 3: IncreaseStock() should not allow 0 increase
+        // Test 3: IncreaseStock() should not allow 0 increase
         [Test]
         public void IncreaseStock_ZeroAmount_ShouldThrowException()
         {
@@ -42,7 +42,7 @@ namespace ProductTests
             Assert.Throws<ArgumentException>(() => product.IncreaseStock(0));
         }
 
-        // ✅ Test 4: DecreaseStock() should correctly reduecs stock
+        // Test 4: DecreaseStock() should correctly reduecs stock
         [Test]
         public void DecreaseStock_ValidAmount_ShouldDecreaseStock()
         {
@@ -53,7 +53,7 @@ namespace ProductTests
             Assert.That(product.StockAmount, Is.EqualTo(40));
         }
 
-        // ✅ Test 5: DecreaseStock() should not allow reducing more than availabile stock
+        //  Test 5: DecreaseStock() should not allow reducing more than availabile stock
         [Test]
         public void DecreaseStock_ExceedingStock_ShouldThrowException()
         {
@@ -61,7 +61,7 @@ namespace ProductTests
             Assert.Throws<InvalidOperationException>(() => product.DecreaseStock(60));
         }
 
-        // ✅ Test 6: DecreaseStock() should not allow negative values
+        // Test 6: DecreaseStock() should not allow negative values
         [Test]
         public void DecreaseStock_NegativeAmount_ShouldThrowException()
         {
