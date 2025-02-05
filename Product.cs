@@ -25,21 +25,37 @@ namespace Assignment2
         
         public void IncreaseStock(int amount)
         {
-            if (amount > 0)
+            if (amount < 0)
+            {
+                throw new ArgumentException("Amount to increase cannot be negative");
+            }
+
+            if (StockAmount + amount > 500000)
+            {
+                StockAmount = 500000; 
+            }
+            else
             {
                 StockAmount += amount;
             }
         }
 
         
-        public bool DecreaseStock(int amount)
+        public void DecreaseStock(int amount)
         {
-            if (amount > 0 && StockAmount >= amount)
+            if (amount < 0)
+            {
+                throw new ArgumentException("Amount to decrease cannot be negative");
+            }
+
+            if (StockAmount - amount < 0)
+            {
+                StockAmount = 0; 
+            }
+            else
             {
                 StockAmount -= amount;
-                return true;
             }
-            return false;
         }
     }
 }
